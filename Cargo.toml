@@ -1,0 +1,38 @@
+[package]
+name = "http-request"
+version = "0.1.0"
+authors = ["Benjamin Hetherington <b.w.hetherington@gmail.com>"]
+edition = "2018"
+
+[features]
+default = ["wasm"]
+native = ["reqwest"]
+wasm = ["web-sys", "wasm-bindgen", "wasm-bindgen-futures", "futures"]
+
+[dependencies.web-sys]
+version = "0.3.6"
+optional = true
+features = [
+  'Headers',
+  'Request',
+  'RequestInit',
+  'RequestMode',
+  'Response',
+  'Window',
+]
+
+[dependencies.reqwest]
+version = "0.9.15"
+optional = true
+
+[dependencies.wasm-bindgen]
+version = "0.2.29"
+optional = true
+
+[dependencies.wasm-bindgen-futures]
+version = "*"
+optional = true
+
+[dependencies.futures]
+version = "*"
+optional = true
